@@ -36,6 +36,7 @@ However, the remaining flip-flops should be made ready to toggle only when all l
 
 **PROGRAM**
 Developed By : Elamaran S E
+
 Register No. : 212222230036
 
       module sync_up_counter (
