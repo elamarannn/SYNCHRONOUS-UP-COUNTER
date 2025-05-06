@@ -28,56 +28,44 @@ However, the remaining flip-flops should be made ready to toggle only when all l
 
 **Procedure**
 
-1.Initialize the shift register to a known state (e.g., all zeros).
-
-2.Input a bit serially into the shift register.
-
-3.Shift the contents of the register one position to the right (or left).
-
-4.Output the shifted bit from the last stage of the register.
-
-5.Repeat steps 2-4 for each bit you want to input and shift.
-
+1. Create a new project and name it.
+2. Go to file, choose new file and click on the verilog HDL file.
+3. Now have the program for 4-bit synchronous up counter and compile and run it.
+4. Next, generate the RTL diagram for that go to Netlist viewers and select RTL diagram.
+5. For the waveform/timing diagram insert the nodes and give the inputs for clock and reset and run it.
 
 **PROGRAM**
+Developed By : Elamaran S E
+Register No. : 212222230036
 
-```
-/*
-Program for flipflops and verify its truth table in quartus using Verilog programming. 
-Developed by: Elamaran SE
-RegisterNumber: 21222230036
-*/
-```
-```VHDL
-module ex11(out,clk,rstn);
-input clk,rstn;
-output reg [3:0]out;
-always @ (posedge clk)
-begin
-   if(!rstn)
-     out<=0;
-   else 
-     out <= out+1;
-end
-endmodule
-```
+      module sync_up_counter (
+          input clk,
+          input reset,
+          output reg [3:0] count
+      );
+      
+      always @(posedge clk or posedge reset) begin
+          if (reset)
+              count <= 4'b0000;
+          else
+              count <= count + 1;
+      end
+      
+      endmodule
+
 
 **RTL LOGIC UP COUNTER**
-
-![image](https://github.com/gauthamkrishna7/SYNCHRONOUS-UP-COUNTER/assets/141175025/3fc75b05-1906-4744-8b66-a1245f6ef8dd)
-
+![Screenshot 2025-05-06 100140](https://github.com/user-attachments/assets/11dbbc34-1a43-4703-9d76-8a050b2ae5c6)
 
 
 **TIMING DIAGRAM FOR IP COUNTER**
-
-![image](https://github.com/gauthamkrishna7/SYNCHRONOUS-UP-COUNTER/assets/141175025/6958c1cc-55d0-45b0-ae98-f11cf7b425ad)
+![Screenshot 2025-05-06 101725](https://github.com/user-attachments/assets/d5ed4d48-af0b-4443-931f-9e5d2f52bb47)
 
 
 **TRUTH TABLE**
 
-![image](https://github.com/gauthamkrishna7/SYNCHRONOUS-UP-COUNTER/assets/141175025/1f42bc36-2284-404b-971e-1f7faf07c0fe)
+![image](https://github.com/user-attachments/assets/33fe9063-b902-4983-a0dd-280db8f4cb51)
 
 
 **RESULTS**
-
-Hence a 4 bit synchronous up counter is implemented correctly
+Thus the simulation, logic diagram and waveform has been verified for syncronous up-counter using quartus.
