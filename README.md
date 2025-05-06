@@ -35,6 +35,7 @@ However, the remaining flip-flops should be made ready to toggle only when all l
 5. For the waveform/timing diagram insert the nodes and give the inputs for clock and reset and run it.
 
 **PROGRAM**
+
 Developed By : Elamaran S E
 
 Register No. : 212222230036
